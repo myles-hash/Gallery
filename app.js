@@ -36,6 +36,16 @@ async function getImages(query) {
       // set the src and all of my new img tag
       img.src = imageObj.urls.full;
       img.alt = imageObj.alt_description;
+      img.tabIndex = data[imageObj];
+
+      img.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            displayImage.src = imageObj.urls.full;
+            displayImage.alt = imageObj.alt_description;
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(image => image.classList.remove('selected'));
+            img.classList.add('selected');
+        } });
  
       const displayImage = document.getElementById("displayImage");
 
@@ -46,18 +56,14 @@ async function getImages(query) {
         allImages.forEach(image => image.classList.remove('selected'));
         img.classList.add('selected');
         });
-     
-
-
-
-
+    
       // append my image to the page
       document.getElementById("thumbs").appendChild(img);
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    getImages("cat");
+    getImages("dog");
   });
   // take user input to affect the unsplash query
   const form = document.getElementById("searchForm");
@@ -71,8 +77,6 @@ async function getImages(query) {
 
   });
 
-  
-getImages("cat");
 
 let hideBtn = document.getElementById('hideThumbs');
 hideBtn.addEventListener('click',() => {
@@ -80,6 +84,5 @@ hideBtn.addEventListener('click',() => {
     document.getElementById('searchForm').classList.toggle('hidden');
     hideBtn.classList.toggle('butLeft');
 });
-
 
 

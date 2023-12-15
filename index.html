@@ -12,14 +12,17 @@
       <input
         name="myQuery"
         type="text"
-        placeholder="imagesearch..."
+        placeholder="Image search..."
         id="myQuery"
+        tabindex="1"
       />
     </form>
-    <button id="hideThumbs">..</button>
+    <button id="hideThumbs" alt="hide thumbnails">Hide</button>
     <div class="cont">
       <div id="thumbs" class="thumbs"></div>
-      <div id="displayBox"><img id="displayImage" alt="Selected Image" /></div>
+      <div id="displayBox">
+        <img id="displayImage" alt="Selected Image" tabindex="2" />
+      </div>
     </div>
   </body>
 </html>
