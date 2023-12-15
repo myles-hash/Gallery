@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+
+.cont {
+    display: flex;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+}
+#thumbs {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    overflow-y: auto;
+    max-height: 100%;
+    cursor: pointer;
+    position: fixed;
+    left:0;
+  }
+
+  #displayImage {
+    max-width: 100vw;
+    height: 100vh;
+  }
+
+  #searchForm {
+    position: fixed;
+    z-index: 1;
+    left: 10vw;
+  }
+
+  #hideThumbs {
+    position: fixed;
+    z-index: 1;
+    left: 10vw;
+    top: 50vh;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .butLeft {
+    left:0 !important;
+  }
+
+.selected {
+  border: 2px solid white;
+}
+
+@media (max-width:425px) {
+  #thumbs {
+    flex-direction: row;
+    width: 100vw;
+    top: 70vh;
+    max-height: 28vh; /* Limit height for mobile layout */
+    overflow-x: auto; /* Hide horizontal scrollbar */
+    overflow-y: hidden; /* Allow vertical scrolling if thumbs exceed the height */
+  }
+
+  #displayImage {
+    height: 70vh;
+    width: auto;
+    object-fit: cover;
+  }
+
+  #thumbs img {
+    width: 80vw;
+    height: 27vh;
+  }
+  
+  #searchForm {
+    left: 33vw;
+    bottom: 0;
+  }
+
+  #hideThumbs {
+    left: 0;
+    top: 97.5vh;
+  }
+
+}
