@@ -56,7 +56,7 @@ body, html {
     flex-direction: row;
     width: 100vw;
     top: 70vh;
-    max-height: 28vh; /* Limit height for mobile layout */
+    max-height: 27vh; /* Limit height for mobile layout */
     overflow-x: auto; /* Hide horizontal scrollbar */
     overflow-y: hidden; /* Allow vertical scrolling if thumbs exceed the height */
   }
@@ -79,7 +79,7 @@ body, html {
 
   #hideThumbs {
     left: 0;
-    top: 97.5vh;
+    top: 97vh;
   }
 
 }
